@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : $Id: database-settings.xml 15 2004-07-04 18:43:31Z bdickie $
+    Created on : July 4, 2004, 10:55 AM
+    Author     : Blake Dickie
+    Description:
+        Stores connection info for database.
+-->
+
+<database>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>jdbc:mysql://quon.landora/robowars</url>
+    <username>robowars</username>
+    <password>JNNHdA9aJ6</password>
+</database>
+<!--
+Change Log:
+   $Log: database-settings.xml,v $
+   Revision 1.1  2004/07/04 18:43:31  bdickie
+   Database settings for connecting to the MySQL database.
+
+-->
