@@ -33,7 +33,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.optimedsoftware.mb.labdownload.DownloadApp</mainClass>
+                            <mainClass>robowars.editor.EditorFrame</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -55,6 +55,44 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>target/robowars-editor.exe</outfile>
+                            <jar>target/${project.artifactId}-${project.version}.jar</jar>
+                            <errTitle>Robo Wars Editor</errTitle>
+                            <classPath>
+                                <mainClass>robowars.editor.EditorFrame</mainClass>
+                                <addDependencies>true</addDependencies>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.6.0</minVersion>
+                            </jre>
+                            <!--<versionInfo>
+                                <fileVersion>1.2.3.4</fileVersion>
+                                <txtFileVersion>txt file version?</txtFileVersion>
+                                <fileDescription>a description</fileDescription>
+                                <copyright>my copyright</copyright>
+                                <productVersion>4.3.2.1</productVersion>
+                                <txtProductVersion>txt product version</txtProductVersion>
+                                <productName>E-N-C-C</productName>
+                                <internalName>ccne</internalName>
+                                <originalFilename>original.exe</originalFilename>
+                            </versionInfo>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <properties>
@@ -71,11 +109,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.21</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>
